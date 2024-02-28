@@ -1,5 +1,5 @@
 
-<h2 align="center">DEM_TWI__Mississauga</h2>
+<h2 align="center">DEM_TWI_Mississauga</h2>
 <p align="center">
 <img src="https://github.com/mikaelsyed/DEM_TWI_Mississauga/blob/main/DEMgif.gif" alt="Alt Text" width="200" height="200">
 </p>
