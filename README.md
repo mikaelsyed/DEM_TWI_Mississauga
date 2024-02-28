@@ -1,3 +1,4 @@
+![](https://github.com/mikaelsyed/DEM_TWI_Mississauga/blob/main/DEMgif.gif)
 
 <h2 align="center">DEM_TWI__Mississauga</h2>
 <h3 align="center">A Digital Elevation Model and Topographic Wetness Index of Mississauga</h3>
