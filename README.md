@@ -13,3 +13,6 @@
 </p>
 
 
+
+You can view my Knitted HTML Doc here :)
+   -> [DEM_TWI_Mississauga.html](https://htmlpreview.github.io/?https://github.com/mikaelsyed/DEM_TWI_Mississauga/blob/main/DEM_TWI_Mississauga.html)
