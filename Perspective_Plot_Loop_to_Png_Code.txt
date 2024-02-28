@@ -1,0 +1,35 @@
+
+```{r}
+
+library(raster)
+
+# Creating directory
+dir.create("perspective_plots", showWarnings = FALSE)
+
+# 360 degree angles
+angles <- seq(0, 360, by = 1) 
+
+# Loop through the angles
+for (angle in angles) {
+  # Set the file name for the PNG file
+  filename <- sprintf("perspective_plots/plot_%03d.png", angle)
+  
+  # Perspective Plot Loop
+  png(filename)
+  persp(elevation, 
+        phi = phi_fixed, 
+        theta = angle, 
+        xlab = "Longitude", 
+        ylab = "Latitude", 
+        zlab = "Elevation", 
+        ticktype = "detailed", 
+        nticks = 3, 
+        col = topo.colors(4), 
+        border = NA, 
+        shade = 0.4, 
+        expand = 0.30,
+        main = "Digital Elevation Model of Mississauga")
+  dev.off()
+}
+
+```

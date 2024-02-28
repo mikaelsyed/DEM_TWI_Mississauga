@@ -1,0 +1,159 @@
+---
+title: "DEM_TWI_Mississauga"
+author: "Mikael Syed"
+date: "2024-02-28"
+output: html_document 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+<img src="C:/RProjects/DEM_TWI_Mississauga/DEMgif.gif" alt="Alt Text" width="200" height="200">
+
+
+```{r}
+library(fastmap)
+library(raster)
+library(ggplot2)
+library(rgl)
+library(plot3D)
+library(rasterVis)
+library(animation)
+
+```
+
+# Elevation of Mississauga plotted from raster data
+
+```{r}
+elevation <- raster("DEM.tif")
+par(mar = c(4, 6, 4, 2) + 0.1)
+
+plot(elevation, main = "Elevation of Mississauga (Meters)", xlab = "Longitude", ylab = "Latitude")
+```
+# DEM of Mississauga Plot Perspectives
+
+```{r}
+
+persp(elevation, 
+      phi=35, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3, 
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+
+
+```{r}
+persp(elevation, 
+      phi=1, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3,
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+
+```{r}
+persp(elevation, 
+      theta=45, 
+      phi=1, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3, 
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+
+
+```{r}
+persp(elevation, 
+      theta=90, 
+      phi=1, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3, 
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+
+
+```{r}
+persp(elevation, 
+      theta=135, 
+      phi=1, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3, 
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+
+
+```{r}
+persp(elevation, 
+      theta=180, 
+      phi=1, 
+      xlab="Longitude", 
+      ylab="Latitude", 
+      zlab="Elevation", 
+      ticktype = "detailed", 
+      nticks = 3, 
+      col = topo.colors(4), 
+      border = NA, 
+      shade= 0.4, 
+      expand = 0.30)
+```
+# Elevation Histogram (Unfilled sinks)
+
+```{r}
+
+elevationunfilled <- raster("DEM.tif")
+
+hist(elevationunfilled, main = "Distribution of Elevation vs Frequency (Unilled Sink DEM)", xlab = "Elevation", ylab = "Frequency")
+
+```
+
+# Elevation Histogram (filled sinks)
+
+```{r}
+
+elevationfilled <- raster("Fill_DEM.tif")
+
+hist(elevationfilled, main = "Distribution of Elevation vs Frequency (Filled Sink DEM)", xlab = "Elevation", ylab = "Frequency")
+
+
+```
+
+# Topographic Wetness Index Plot
+
+```{r}
+TWI <- raster("TWI.tif")
+par(mar = c(4, 6, 4, 2) + 0.1)
+
+
+plot(TWI, main = "TWI of Mississauga", xlab = "Longitude", ylab = "Latitude"
+)
+
+```
