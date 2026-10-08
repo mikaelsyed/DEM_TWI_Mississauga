@@ -1,0 +1,305 @@
+/* Report theme for Mikael Syed's R Markdown reports, matched to mikaelsyed.com.
+   Used with `theme: version: 5` (Bootstrap 5.3) in the Rmd YAML. */
+
+:root,
+[data-bs-theme="light"] {
+  --ms-bg: #f9f5d7;
+  --ms-surface: #f1eccb;
+  --ms-line: #d5c4a1;
+  --ms-fg: #242424;
+  --ms-muted: #6b665a;
+  --ms-title: #d62221;
+  --ms-accent: #de8d32;
+  --ms-green: #98971a;
+  --ms-aqua: #689d6a;
+  --ms-code-bg: #f1eccb;
+  --bs-body-bg: var(--ms-bg);
+  --bs-body-color: var(--ms-fg);
+  --bs-border-color: var(--ms-line);
+  --bs-link-color: var(--ms-title);
+  --bs-link-color-rgb: 214, 34, 33;
+  --bs-link-hover-color: var(--ms-accent);
+  --bs-link-hover-color-rgb: 222, 141, 50;
+}
+
+[data-bs-theme="dark"] {
+  --ms-bg: #242424;
+  --ms-surface: #2c2928;
+  --ms-line: #3d3836;
+  --ms-fg: #f9f5d7;
+  --ms-muted: #a8a294;
+  --ms-code-bg: #2c2928;
+  --bs-body-bg: var(--ms-bg);
+  --bs-body-color: var(--ms-fg);
+  --bs-border-color: var(--ms-line);
+  color-scheme: dark;
+}
+
+body {
+  background: var(--ms-bg);
+  color: var(--ms-fg);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.main-container {
+  max-width: 1100px;
+}
+
+/* ---------- Title block ---------- */
+#header {
+  margin: 2.5rem 0 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--ms-line);
+}
+
+h1.title {
+  color: var(--ms-accent);
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h4.author,
+h4.date {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--ms-muted);
+  margin: 0.15rem 0 0;
+}
+
+h4.author::before {
+  content: "by ";
+}
+
+/* ---------- Headings ---------- */
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+.section h1 {
+  color: var(--ms-title);
+  font-size: 1.7rem;
+  margin-top: 2.5rem;
+}
+
+.section h2 {
+  color: var(--ms-green);
+  font-size: 1.4rem;
+  margin-top: 2.25rem;
+}
+
+.section h3 {
+  color: var(--ms-aqua);
+  font-size: 1.15rem;
+  margin-top: 1.75rem;
+}
+
+p,
+li {
+  max-width: 72ch;
+}
+
+strong,
+b {
+  color: var(--ms-accent);
+  font-weight: 600;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+/* ---------- Code ---------- */
+pre,
+code {
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+pre {
+  background: var(--ms-code-bg);
+  border: 1px solid var(--ms-line);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: var(--ms-fg);
+}
+
+pre code {
+  color: inherit;
+  background: none;
+}
+
+/* Override the syntax highlighter's own block background */
+div.sourceCode,
+pre.sourceCode {
+  background: var(--ms-code-bg) !important;
+  border-radius: 8px;
+}
+
+div.sourceCode pre.sourceCode {
+  margin: 0;
+}
+
+/* With code folding, the wrapper holds the Show/Hide button: keep it bare */
+div.sourceCode:has(.code-folding-btn) {
+  background: transparent !important;
+  overflow: visible;
+}
+
+div.sourceCode:has(.code-folding-btn) > .row {
+  margin: 0;
+}
+
+div.sourceCode:has(.code-folding-btn) .col-md-12 {
+  padding: 0;
+}
+
+.code-folding-btn {
+  margin-bottom: 0.4rem;
+}
+
+[data-bs-theme="dark"] code span.co { color: #a8a294; }
+[data-bs-theme="dark"] code span.fu { color: #e6b86a; }
+[data-bs-theme="dark"] code span.dv,
+[data-bs-theme="dark"] code span.fl { color: #8ec07c; }
+[data-bs-theme="dark"] code span.st { color: #d3869b; }
+[data-bs-theme="dark"] code span.kw,
+[data-bs-theme="dark"] code span.ot,
+[data-bs-theme="dark"] code span.op { color: #fe8019; }
+
+:not(pre) > code {
+  background: var(--ms-code-bg);
+  color: var(--ms-title);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+/* Output blocks read as results, not code */
+.main-container pre:not([class]) {
+  background: transparent !important;
+  color: var(--ms-fg);
+  border-style: dashed;
+}
+
+/* Code folding buttons */
+.btn-default,
+.btn-outline-secondary {
+  --bs-btn-color: var(--ms-muted);
+  --bs-btn-border-color: var(--ms-line);
+  --bs-btn-hover-bg: var(--ms-surface);
+  --bs-btn-hover-color: var(--ms-accent);
+  --bs-btn-hover-border-color: var(--ms-accent);
+  font-size: 0.75rem;
+}
+
+/* ---------- Tables ---------- */
+.table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--ms-fg);
+  --bs-table-border-color: var(--ms-line);
+  --bs-table-striped-bg: var(--ms-surface);
+  width: auto;
+  min-width: 50%;
+  font-variant-numeric: tabular-nums;
+}
+
+.table thead th {
+  color: var(--ms-accent);
+  border-bottom-width: 2px;
+}
+
+/* ---------- Figures ---------- */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.figure,
+p > img {
+  border-radius: 8px;
+}
+
+.caption,
+p.caption {
+  color: var(--ms-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ---------- Floating table of contents ---------- */
+#TOC {
+  border: none;
+  border-left: 1px solid var(--ms-line);
+  border-radius: 0;
+  background: transparent;
+  font-size: 0.9rem;
+}
+
+.tocify .list-group-item {
+  background: transparent;
+  border: none;
+  color: var(--ms-muted);
+  padding: 0.3rem 0.75rem;
+}
+
+.tocify .list-group-item.active,
+.tocify .list-group-item:hover {
+  background: transparent;
+  color: var(--ms-title);
+  font-weight: 600;
+}
+
+/* ---------- Callouts ---------- */
+.callout {
+  border-left: 3px solid var(--ms-accent);
+  background: var(--ms-surface);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.25rem 0;
+}
+
+/* ---------- Theme toggle + back link ---------- */
+.ms-topbar {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 16px 0;
+}
+
+.ms-topbar a,
+.ms-topbar button {
+  font: inherit;
+  font-size: 0.8rem;
+  color: var(--ms-muted);
+  background: var(--ms-bg);
+  border: 1px solid var(--ms-line);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ms-topbar a:hover,
+.ms-topbar button:hover {
+  color: var(--ms-accent);
+  border-color: var(--ms-accent);
+}
+
+/* Leaflet / htmlwidgets sit on a card in both themes */
+.leaflet-container,
+.html-widget {
+  border-radius: 8px;
+}
